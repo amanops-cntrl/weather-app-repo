@@ -8,7 +8,7 @@ export default function FiveDay(props){
             <h1>Extended forecast</h1>
             <div className="forecast-row">
                 {props.fiveDay.map(prev=> 
-                <div className="day-forecast">
+                <div className="day-forecast" key={prev.dt}>
                 <h2>{props.dayName}</h2>
                 <img src={`https://openweathermap.org/img/wn/${prev.weather[0].icon}@2x.png`} alt="" />
                 <h2>{prev.weather[0].main}</h2>

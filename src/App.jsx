@@ -33,26 +33,46 @@ React.useEffect(() => {
     const key = import.meta.env.VITE_API_KEY;
     const urlone = import.meta.env.VITE_API_URL;
     const urltwo = import.meta.env.VITE_API_FIVE;
-    setLoading(true)
-    const endpointone =fahrenheit? `${urlone}?q=${city}&appid=${key}&units=imperial`: `${urlone}?q=${city}&appid=${key}&units=metric`;
-    const endpointtwo = fahrenheit? `${urltwo}?q=${city}&appid=${key}&units=imperial`: `${urltwo}?q=${city}&appid=${key}&units=metric`;
+
+    setLoading(true);
+    setWeather(null);
+    setfiveDay([]);
+
+    const endpointone = fahrenheit
+      ? `${urlone}?q=${city}&appid=${key}&units=imperial`
+      : `${urlone}?q=${city}&appid=${key}&units=metric`;
+
+    const endpointtwo = fahrenheit
+      ? `${urltwo}?q=${city}&appid=${key}&units=imperial`
+      : `${urltwo}?q=${city}&appid=${key}&units=metric`;
+
     const response = await fetch(endpointone);
     const data = await response.json();
+
+    setWeather(data);
+
+    if (data.cod !== 200) {
+      setfiveDay([]);
+      setLoading(false);
+      return;
+    }
+
     const responseFiveDay = await fetch(endpointtwo);
     const dataFiveDay = await responseFiveDay.json();
-    setLoading(false)
-    setWeather(data)
-    if (dataFiveDay.list){
-        setfiveDay(dataFiveDay.list.slice(0,5))
+
+    if (dataFiveDay.list) {
+      setfiveDay(dataFiveDay.list.slice(0, 5));
+      console.log(dataFiveDay.list.slice(0, 5));
+    } else {
+      setfiveDay([]);
     }
-    else
-    {
-      setfiveDay([])
-    }
+
+    setLoading(false);
   }
 
   getWeather();
-}, [city,fahrenheit]);
+}, [city, fahrenheit]);
+
 
 const dayName =
   fiveDay && fiveDay.length > 0
