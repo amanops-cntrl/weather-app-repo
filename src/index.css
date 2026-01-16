@@ -1,0 +1,294 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.App{
+  background-color: rgb(176, 235, 255);
+  min-height: 100vh;
+  height: auto;
+
+}
+.darkmode{
+  font-size: 32px;
+  color: blue;
+}
+.toggleOn{
+  font-size: 3rem;
+  color: blue;
+}
+.toggleOff{
+  font-size:3rem;
+  color: blue;
+}
+.reactWeather{
+  display: flex;
+  justify-content: space-between;
+  gap:12px;
+  flex-wrap: wrap;
+}
+.heading{
+
+  margin:1rem;
+  font-size: clamp(1.6rem, 5vw, 3rem);
+  color: blue;
+
+}
+.toggleMode{
+  margin:2rem 2rem 2rem 2rem;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  border-radius: 25px;
+}
+.lightmode{
+
+  font-size: 32px;
+  color:yellow;
+}
+.input-text {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  height: 4rem;
+  width: 80vw;
+  margin: 0 auto;
+
+  border-radius: 10px;
+  border: 2px solid #111;
+  background-color: white;
+  padding: 0 1rem;
+}
+
+.input {
+  flex: 1;              
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+.search {
+  font-size: 32px;
+  color: #6b7280;
+}
+.input-text.dark {
+  background-color: #0F172A;
+  border: 1px solid rgb(40, 39, 39);
+}
+.current-weather{
+  height: auto;
+  width: 80vw;
+  background-color: white;
+  padding:0 1rem;
+  margin: 3rem auto;  
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+}
+
+
+.current-weather:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 10px 20px rgba(69, 66, 66, 0.2);
+}
+.current-weather.dark{
+  background-color: #0F172A;
+}
+
+
+.current-weather.dark:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 10px 20px rgba(71, 71, 194, 0.648);
+}
+.main-temp{
+  font-size: 25px;
+  color: blue;
+  
+}
+.iconandweather {
+  display:flex;
+  align-items: center;
+}
+.icon-section{
+  margin: 16px 0 16px 4rem;
+}
+.icon-section p {
+  color: blue;
+  font-size:24px ;
+}
+
+.weather-description{
+  margin: 16px 4rem 16px 0;
+  height: auto;
+  width:auto;
+}
+.weather-description p {
+  font-size: 20px;
+  color:gray;
+}
+.fahrenheit-toggle{
+  display: flex;
+  align-items: center;
+}
+.weather-description p span{
+  color: blue;
+}
+.highandlow{
+  display:flex;
+  justify-content: space-between;
+  width:100%;
+  margin-top:15px;
+  margin-bottom: 15px;
+  color: blue;
+}
+.humidity{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+.humid-icon{
+  display: flex;
+  gap:6px;
+  color: gray;
+}
+.humidity-icon{
+  color:blue
+}
+.humid-info{
+  color:blue;
+}
+
+.wind-section{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+.wind-icon{
+  display: flex;
+  gap:6px;
+  color: gray;
+}
+.windy-icon{
+  color:blue
+}
+.wind-info{
+  color:blue;
+}
+
+.pressure-section{
+  display: flex;
+  width: auto;
+  justify-content: space-between;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+.pressure-icon{
+  display: flex;
+  gap:6px;
+  color: gray;
+}
+.baro{
+  color:blue
+}
+.pressure-info{
+  color:blue;
+}
+.main-heading{
+  color: blue;
+  margin-bottom: 10px;
+}
+.weather-status{
+  color:blue;
+}
+
+.extended-forecast-container{
+  display: flex;
+  justify-content: center;
+
+
+}
+.five-day-forecast {
+  background-color: white;
+  width:80vw;
+  height:auto;
+  border-radius: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.five-day-forecast h1{
+  margin: 16px 0 16px 64px;
+  color: blue;
+}
+.day-forecast{
+  margin:16px 16px 16px 16px;
+  flex: 1;
+  text-align: center;
+}
+.day-forecast p {
+  font-size: 20px;
+  color:blue;
+}
+.day-forecast h2{
+  color:blue;
+}
+.five-day-forecast.dark{
+  background-color: #0F172A;
+}
+.degrees{
+  margin-top: 16px;}
+.forecast-row{
+  display: flex;
+  gap:24px;
+  flex-wrap: wrap;
+}
+.five-day-forecast.dark:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 10px 20px rgba(71, 71, 194, 0.648);
+}
+.five-day-forecast:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 10px 20px rgba(69, 66, 66, 0.2);
+}
+
+@media (max-width: 768px) {
+  .input-text,
+  .current-weather,.five-day-forecast {
+    width: 92vw;
+  }
+
+
+  .current-weather {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .icon-section,
+  .weather-description {
+    margin: 16px 1rem; 
+  }
+
+  .toggleMode {
+    margin: 1rem;
+  }
+  .five-day-forecast h1{
+    text-align: left;
+  }
+}
+
+
+
+
